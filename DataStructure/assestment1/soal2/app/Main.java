@@ -23,20 +23,26 @@ public class Main {
         System.out.print("Masukkan NIM mahasiswa yang ingin diupdate: ");
         String nimCari = input.nextLine();
         boolean ditemukan = false;
-        
-        for (Mahasiswa mhs : daftar) {
-            if (mhs.getNim().equals(nimCari)) {
 
+        // loop untuk mencari mahasiswa berdasarkan NIM yang diinputkan
+            for (Mahasiswa mhs : daftar) {
+                // jika NIM mahasiswa cocok dengan NIM yang dicari
+                if (mhs.getNim().equals(nimCari)) {
+                // jika mahasiswa ditemukan, tampilkan data sebelum diupdate
+                System.out.println("Data sebelum diperbarui:");
+                mhs.tampilkanInfo();
+                // input IPK baru dari admin
                 System.out.print("Masukkan IPK baru: ");
                 double ipkBaru = input.nextDouble();
 
                 mhs.updateIpk(ipkBaru);
-
+                // 
                 System.out.println("Data berhasil diperbarui!\n");
 
+                // tampilkan data setelah diupdate
                 System.out.println("=== Data Mahasiswa ===");
                 mhs.tampilkanInfo();
-
+                // set flag ditemukan menjadi true dan keluar dari loop
                 ditemukan = true;
                 break;
             }
