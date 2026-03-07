@@ -1,5 +1,5 @@
-package assestment.soal1.app;
-import assestment.soal1.model.Mahasiswa;
+package assestment1.soal1.app;
+import assestment1.soal1.model.Mahasiswa;
 
 public class Main {
     public static void main(String[] args) {
