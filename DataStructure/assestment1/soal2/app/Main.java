@@ -13,22 +13,40 @@ public class Main {
         Scanner input = new Scanner(System.in);
 
         // membuat objek Mahasiswa dengan data awal sebelum diupdate
-        Mahasiswa m1 = new Mahasiswa("Budi", "101", "Informatika", 2.8);
+        Mahasiswa m1 = new Mahasiswa("Chafiedz", "101", "Informatika", 2.8);
+        Mahasiswa m2 = new Mahasiswa("Daffa", "102", "Informatika", 3.5);
+        Mahasiswa m3 = new Mahasiswa("Rizky", "103", "Informatika", 2.5);
 
-        // menampilkan informasi mahasiswa dan status kelulusan sebelum update
-        m1.tampilkanInfo();
-        m1.cekKelulusan();
-        // meminta user untuk memasukkan IPK baru
-        System.out.print("Masukkan IPK baru: ");
-        // membaca input IPK baru dari user
-        double ipkBaru = input.nextDouble();
+        Mahasiswa[] daftar = {m1, m2, m3};
 
-        // mengupdate IPK mahasiswa dengan nilai baru yang dimasukkan
-        m1.updateIpk(ipkBaru);
+        // Input NIM mahasiswa
+        System.out.print("Masukkan NIM mahasiswa yang ingin diupdate: ");
+        String nimCari = input.nextLine();
+        boolean ditemukan = false;
+        
+        for (Mahasiswa mhs : daftar) {
+            if (mhs.getNim().equals(nimCari)) {
 
-        // menampilkan informasi mahasiswa dan status kelulusan setelah update
-        System.out.println("\nSetelah Update:");
-        m1.tampilkanInfo();
-        m1.cekKelulusan();
+                System.out.print("Masukkan IPK baru: ");
+                double ipkBaru = input.nextDouble();
+
+                mhs.updateIpk(ipkBaru);
+
+                System.out.println("Data berhasil diperbarui!\n");
+
+                System.out.println("=== Data Mahasiswa ===");
+                mhs.tampilkanInfo();
+
+                ditemukan = true;
+                break;
+            }
+        }
+
+        if (!ditemukan) {
+            System.out.println("Mahasiswa dengan NIM tersebut tidak ditemukan.");
+        }
+
+        input.close();
     }
+        
 }

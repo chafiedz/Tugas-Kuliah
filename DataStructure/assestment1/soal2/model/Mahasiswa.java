@@ -17,6 +17,16 @@ public class Mahasiswa {
         this.ipk = ipk;
     }
 
+    // Getter NIM   
+    public String getNim() {
+        return nim;
+    }
+    
+    // setter NIM
+    public void setNim(String nim) {
+        this.nim = nim;
+    }
+
     // Getter IPK
     public double getIpk() {
         return ipk;
@@ -42,8 +52,10 @@ public class Mahasiswa {
     }
     // Method untuk menampilkan informasi mahasiswa
     public void tampilkanInfo() {
-        System.out.println("Nama : " + nama);
-        System.out.println("NIM  : " + nim);
-        System.out.println("IPK  : " + ipk);
+        System.out.println("Nama: " + nama);
+        System.out.println("NIM: " + nim);
+        System.out.println("Jurusan: " + jurusan);
+        System.out.println("IPK: " + ipk);
+        cekKelulusan();
     }
 }
