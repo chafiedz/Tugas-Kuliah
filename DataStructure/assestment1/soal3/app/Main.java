@@ -1,15 +1,16 @@
 package assestment1.soal3.app;
+// import class Scanner untuk input data
 import java.util.Scanner;
-
+// import class Mahasiswa dari package model
 import assestment1.soal3.model.Mahasiswa;
 
 
 public class Main {
 
     public static void main(String[] args) {
-
+        // Membuat objek Scanner untuk membaca input dari pengguna
         Scanner input = new Scanner(System.in);
-
+        // Membuat array untuk menyimpan data mahasiswa
         Mahasiswa[] daftar = new Mahasiswa[3];
 
         // Input data mahasiswa
@@ -29,7 +30,7 @@ public class Main {
             System.out.print("IPK: ");
             double ipk = input.nextDouble();
             input.nextLine(); // membersihkan newline
-
+            // Membuat objek Mahasiswa dan menyimpannya dalam array
             daftar[i] = new Mahasiswa(nama, nim, jurusan, ipk);
             System.out.println();
         }

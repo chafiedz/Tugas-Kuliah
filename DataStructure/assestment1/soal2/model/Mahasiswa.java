@@ -1,13 +1,15 @@
+// deklarasi package untuk Mahasiswa
 package assestment1.soal2.model;
-
+// kelas Mahasiswa dengan atribut nama, nim, jurusan, dan ipk serta metode untuk update IPK dan cek kelulusan
 public class Mahasiswa {
 
     private String nama;
     private String nim;
     private String jurusan;
-    private double ipk; // encapsulation
+    // atribut ipk dibuat private untuk menerapkan encapsulation
+    private double ipk;
 
-    // Constructor
+    // Constructor untuk inisialisasi data mahasiswa
     public Mahasiswa(String nama, String nim, String jurusan, double ipk) {
         this.nama = nama;
         this.nim = nim;
@@ -25,7 +27,7 @@ public class Mahasiswa {
         this.ipk = ipk;
     }
 
-    // Method update IPK
+    // Method untuk mengupdate IPK mahasiswa
     public void updateIpk(double ipkBaru) {
         this.ipk = ipkBaru;
     }
@@ -38,7 +40,7 @@ public class Mahasiswa {
             System.out.println("Status : Belum Lulus");
         }
     }
-
+    // Method untuk menampilkan informasi mahasiswa
     public void tampilkanInfo() {
         System.out.println("Nama : " + nama);
         System.out.println("NIM  : " + nim);

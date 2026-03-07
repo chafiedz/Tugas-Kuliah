@@ -1,5 +1,6 @@
+// deklarasi package untuk Mahasiswa
 package assestment1.soal1.model;
-
+// kelas Mahasiswa dengan atribut nama, nim, jurusan, dan ipk
 public class Mahasiswa {
     String nama;
     String nim;
