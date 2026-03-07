@@ -1,5 +1,5 @@
-package assestment1.soal2.app;
-import assestment1.soal2.model.Mahasiswa;
+package Assestment1.soal2.app;
+import Assestment1.soal2.model.Mahasiswa;
 import java.util.Scanner;
 
 public class Main {
