@@ -1,4 +1,4 @@
-package assestment1.soal3.model;
+package assestment.soal3.model;
 
 public class Mahasiswa {
 
