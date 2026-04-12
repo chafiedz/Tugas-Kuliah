@@ -1,4 +1,4 @@
-package Kuliah.polymorphism.payment;
+package polymorphism.payment;
 
 public class CreditCard extends Pembayaran {
     @Override

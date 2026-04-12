@@ -27,7 +27,7 @@ public class LinkedList {
             this.size = 0;
         }
 
-        // INSERT DI DEPAN — O(1)
+        // INSERT DI DEPAN
         void insertDepan(int data) {
             Node newNode = new Node(data);
             newNode.next = head;
@@ -36,7 +36,7 @@ public class LinkedList {
             System.out.println("Inserted " + data + " di depan.");
         }
 
-        // INSERT DI BELAKANG — O(n)
+        // INSERT DI BELAKANG
         void insertBelakang(int data) {
             Node newNode = new Node(data);
             if (head == null) {
@@ -52,7 +52,7 @@ public class LinkedList {
             System.out.println("Inserted " + data + " di belakang.");
         }
 
-        // INSERT DI POSISI TERTENTU — O(n)
+        // INSERT DI POSISI TERTENTU
         void insertPosisi(int data, int posisi) {
             if (posisi < 0 || posisi > size) {
                 System.out.println("Posisi tidak valid!");
@@ -73,62 +73,7 @@ public class LinkedList {
             System.out.println("Inserted " + data + " di posisi " + posisi + ".");
         }
 
-        // HAPUS DARI DEPAN — O(1)
-        void hapusDepan() {
-            if (head == null) {
-                System.out.println("List kosong!");
-                return;
-            }
-            System.out.println("Menghapus " + head.data + " dari depan.");
-            head = head.next;
-            size--;
-        }
-
-        // HAPUS DARI BELAKANG — O(n)
-        void hapusBelakang() {
-            if (head == null) {
-                System.out.println("List kosong!");
-                return;
-            }
-            if (head.next == null) {
-                System.out.println("Menghapus " + head.data + " dari belakang.");
-                head = null;
-                size--;
-                return;
-            }
-            Node current = head;
-            while (current.next.next != null) {
-                current = current.next;
-            }
-            System.out.println("Menghapus " + current.next.data + " dari belakang.");
-            current.next = null;
-            size--;
-        }
-
-        // HAPUS BERDASARKAN NILAI — O(n)
-        void hapusNilai(int data) {
-            if (head == null) {
-                System.out.println("List kosong!");
-                return;
-            }
-            if (head.data == data) {
-                hapusDepan();
-                return;
-            }
-            Node current = head;
-            while (current.next != null && current.next.data != data) {
-                current = current.next;
-            }
-            if (current.next == null) {
-                System.out.println(data + " tidak ditemukan!");
-                return;
-            }
-            System.out.println("Menghapus nilai " + data + ".");
-            current.next = current.next.next;
-            size--;
-        }
-
-        // CARI NILAI — O(n)
+        // CARI NILAI
         boolean cari(int data) {
             Node current = head;
             int index = 0;
@@ -144,7 +89,7 @@ public class LinkedList {
             return false;
         }
 
-        // TAMPILKAN LIST — O(n)
+        // TAMPILKAN LIST
         void tampilkan() {
             if (head == null) {
                 System.out.println("List kosong.");
@@ -161,7 +106,7 @@ public class LinkedList {
             System.out.println(" -> NULL");
         }
 
-        // BALIK LIST — O(n)
+        // BALIK LIST 
         void balikList() {
             Node prev = null;
             Node current = head;
@@ -183,7 +128,7 @@ public class LinkedList {
     public static void main(String[] args) {
         SinglyLinkedList list = new SinglyLinkedList();
         Scanner scanner = new Scanner(System.in);
-        int pilihan, nilai, posisi;
+        int pilihan, nilai;
 
         while (true) {
             System.out.println("\n╔══════════════════════════════╗");
@@ -191,13 +136,8 @@ public class LinkedList {
             System.out.println("╠══════════════════════════════╣");
             System.out.println("║ 1. Insert di Depan           ║");
             System.out.println("║ 2. Insert di Belakang        ║");
-            System.out.println("║ 3. Insert di Posisi          ║");
-            System.out.println("║ 4. Hapus dari Depan          ║");
-            System.out.println("║ 5. Hapus dari Belakang       ║");
-            System.out.println("║ 6. Hapus berdasarkan Nilai   ║");
-            System.out.println("║ 7. Cari Nilai                ║");
-            System.out.println("║ 8. Tampilkan List            ║");
-            System.out.println("║ 9. Balik List                ║");
+            System.out.println("║ 3. Tampilkan List            ║");
+            System.out.println("║ 4. Balik List                ║");
             System.out.println("║ 0. Keluar                    ║");
             System.out.println("╚══════════════════════════════╝");
             System.out.print("Pilihan: ");
@@ -217,36 +157,9 @@ public class LinkedList {
                     list.tampilkan();
                     break;
                 case 3:
-                    System.out.print("Masukkan nilai: ");
-                    nilai = scanner.nextInt();
-                    System.out.print("Masukkan posisi (0 - " + list.size + "): ");
-                    posisi = scanner.nextInt();
-                    list.insertPosisi(nilai, posisi);
                     list.tampilkan();
                     break;
                 case 4:
-                    list.hapusDepan();
-                    list.tampilkan();
-                    break;
-                case 5:
-                    list.hapusBelakang();
-                    list.tampilkan();
-                    break;
-                case 6:
-                    System.out.print("Masukkan nilai yang dihapus: ");
-                    nilai = scanner.nextInt();
-                    list.hapusNilai(nilai);
-                    list.tampilkan();
-                    break;
-                case 7:
-                    System.out.print("Masukkan nilai yang dicari: ");
-                    nilai = scanner.nextInt();
-                    list.cari(nilai);
-                    break;
-                case 8:
-                    list.tampilkan();
-                    break;
-                case 9:
                     list.balikList();
                     list.tampilkan();
                     break;

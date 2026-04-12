@@ -1,4 +1,4 @@
-package Kuliah.polymorphism.payment;
+package polymorphism.payment;
 
 public class Transfer extends Pembayaran {
 

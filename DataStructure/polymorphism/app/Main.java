@@ -1,7 +1,11 @@
-package Kuliah.polymorphism.app;
+// package polymorphism.app;
+package polymorphism.app;
 
-import Kuliah.polymorphism.payment.*;
 import java.util.Scanner;
+import polymorphism.payment.CreditCard;
+import polymorphism.payment.EWallet;
+import polymorphism.payment.Pembayaran;
+import polymorphism.payment.Transfer;
 
 public class Main {
     public static void main(String[] args) {
@@ -23,11 +27,9 @@ public class Main {
 
         if (pilihan == 1) {
             pembayaran = new CreditCard();
-        } 
-        else if (pilihan == 2) {
+        } else if (pilihan == 2) {
             pembayaran = new EWallet();
-        } 
-        else {
+        } else {
             pembayaran = new Transfer();
         }
 

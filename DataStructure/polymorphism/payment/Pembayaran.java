@@ -1,4 +1,4 @@
-package Kuliah.polymorphism.payment;
+package polymorphism.payment;
 
 public class Pembayaran {
     public void bayar(double jumlah) {

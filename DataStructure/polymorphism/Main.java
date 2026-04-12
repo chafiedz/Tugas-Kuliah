@@ -1,4 +1,4 @@
-package Kuliah.polymorphism;
+package polymorphism;
 
 import java.util.Scanner;
 // Contoh sederhana penerapan polymorphism dalam sistem pembayaran
