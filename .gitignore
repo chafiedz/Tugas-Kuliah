@@ -1,0 +1,7 @@
+# Ignore folder lain
+circular/
+Node/
+PushPop/
+
+# Ignore file .class (hasil compile)
+*.class
